@@ -19,35 +19,21 @@ namespace ITT
 
             if (args.Length == 0)
             {
-                Console.WriteLine("Starting ITT...");
-
-                string scriptUrl = "irm raw.githubusercontent.com/emadadeldev/ittea/main/itt.ps1 | iex";
-
-                ProcessStartInfo psi = new ProcessStartInfo
+                
+                Process.Start(new ProcessStartInfo
                 {
-                    FileName = "powershell.exe",
-                    Arguments = $"-NoProfile -ExecutionPolicy Bypass -Command \"Start-Process powershell -ArgumentList '-NoProfile -ExecutionPolicy Bypass -Command irm {scriptUrl} | iex' -Verb RunAs\"",
+                    FileName = "https://github.com/emadadeldev/ittea",
                     UseShellExecute = true
-                };
+                });
 
-                Process.Start(psi);
                 return;
             }
 
             switch (args[0].ToLower())
             {
+                case "i":
                 case "install":
                     await HandleInstallCommand(args);
-                    break;
-                case "i":
-                    if (args.Length > 1)
-                    {
-                        HandleQuickInstallCommand(args[1]); 
-                    }
-                    else
-                    {
-                        Console.WriteLine("[i] Missing file path. Use: itt i <file.itt>");
-                    }
                     break;
                 case "t":
                 case "tweak":
@@ -68,8 +54,7 @@ namespace ITT
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("\nCommands\n");
             Console.ResetColor();
-            Console.WriteLine("-install\n   Install a package");
-            Console.WriteLine("-i\n   Quick install from a .itt file");
+            Console.WriteLine("-install, -i\n   Install a package\n");
             Console.WriteLine("-h, -help\n   Show this help message\n");
         }
 
