@@ -21,7 +21,7 @@ namespace ITT
             {
                 Console.WriteLine("Starting ITT...");
 
-                string scriptUrl = "bit.ly/ittea";
+                string scriptUrl = "irm raw.githubusercontent.com/emadadeldev/ittea/main/itt.ps1 | iex";
 
                 ProcessStartInfo psi = new ProcessStartInfo
                 {
@@ -287,7 +287,7 @@ namespace ITT
 
         static async Task ExecuteRemoteScript(string TwaekName)
         {
-            string scriptUrl = $"https://raw.githubusercontent.com/itt-co/itt-tweaks/main/{TwaekName}/run.ps1";
+            string scriptUrl = $"https://raw.githubusercontent.com/emadadeldev/itt-tweaks/main/{TwaekName}/run.ps1";
 
             // Run PowerShell in the same session using PowerShell APIs
             using (PowerShell ps = PowerShell.Create())
