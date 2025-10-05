@@ -218,7 +218,7 @@ namespace ITT
 
         static async Task<string> DownloadInstallScript(string packageName)
         {
-            string packageUrl = $"https://raw.githubusercontent.com/itt-co/itt-packages/main/automation/{packageName}/install.ps1";
+            string packageUrl = $"https://raw.githubusercontent.com/emadadeldev/itt-packages/main/automation/{packageName}/install.ps1";
             try
             {
                 return await client.GetStringAsync(packageUrl);
