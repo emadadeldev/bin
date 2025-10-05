@@ -1,5 +1,5 @@
 ﻿// Copyright (c) 2025 Emad Adel. All Rights Reserved.
-// https://github.com/emadadel4/
+// https://github.com/emadadeldev
 using System;
 using System.IO;
 using System.Linq;
