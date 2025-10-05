@@ -128,7 +128,7 @@ namespace ITT
             }
 
             string fullPath = Path.GetFullPath(filePath);
-            string script = $"& {{ $(irm bit.ly/ittea) }} -i {fullPath}";
+            string script = $"& {{ $(irm irm raw.githubusercontent.com/emadadeldev/ittea/main/itt.ps1 | iex) }} -i {fullPath}";
 
             ProcessStartInfo psi = new ProcessStartInfo
             {
